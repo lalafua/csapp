@@ -21,10 +21,15 @@ int exp_B (int x){
 }
 
 int exp_C (int x){
-    int mask = 0xFF << 3;
+    int mask = (0xFF ^ 0xFF);
     return !(x & mask);
 }
 
 int exp_D (int x){
-        
+    int offset = (sizeof(int) - 1) << 3;
+    return !(x & (0xFF << offset));
+}
+
+int main(int argc, char *argv[]){
+    return 0;
 }
