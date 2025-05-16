@@ -33,11 +33,15 @@ unsigned srl(unsigned x, int k) {
 
 int sra(int x, int k){
     int xsrl = (unsigned) x >> k;
-    unsigned mask = 0 >> k;
-    return (xsrl )
+    int w = sizeof(int) << 3;
+    unsigned neg = x >> w-1 & 1U;
+    unsigned mask = -neg << w-k;
+    return (xsrl | mask);
 }
 
-
+int main(int argc, char **argv) {
+    return 0;
+}
 
 
 
