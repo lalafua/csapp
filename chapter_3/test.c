@@ -1,19 +1,16 @@
-long lt_cnt = 0;
-long ge_cnt = 0;
+#include <stdio.h>
+#include <limits.h>
 
-long absdiff_se(long x, long y) {
-    long result;
-    if (x < y) {
-        lt_cnt++;
-        result = y - x; 
+void find_max () {
+    int x = 1;
+    int n = 1;
+    for(; n <= INT_MAX && n > 0; x++) {
+        n *= x;
     }
-    else {
-        ge_cnt++;
-        result = x - y;
-    }
-    return result;
+    printf("%X, %d", n, x);
 }
 
 int main(int argc, char **argv) {
+    find_max();
     return 0;
 }
