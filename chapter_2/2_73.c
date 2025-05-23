@@ -11,3 +11,21 @@
  * 
  * Your function should follow the bit--level integer coding rules (page 120).
  */
+
+
+int saturating_add(int x, int y){
+    int mask = 0x80000000;
+    int sum = x + y;
+    
+    int pos_over = !(x & mask) && !(y & mask) && (sum & mask);
+    int neg_over = (x & mask) && (y & mask) && !(sum & mask);
+
+    (pos_over && (sum = 0x7FFFFFFF) || neg_over && (sum = 0x80000000));
+
+    return sum;
+}
+
+
+int main(int argc, char **argv){
+    return 0;
+}
