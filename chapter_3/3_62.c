@@ -1,4 +1,6 @@
 /*
+3.62
+
 The following code transposes the elements of an M × M array, where M is aconstant deﬁned by #define:
 
 void transpose(Marray_t A) {
