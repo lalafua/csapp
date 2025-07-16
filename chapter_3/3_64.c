@@ -130,5 +130,7 @@ int prod(int x, int y)
 }
 
 int main(int argc, char** argv){
+    int x = 10, y = 20;
+    prod(x, y);
     return 0;
 }
